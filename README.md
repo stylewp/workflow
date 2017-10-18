@@ -10,3 +10,5 @@ My Web Workflow with NPM, SASS, Gulp and More
     - [gulp](http://gulpjs.com/)
     
 3.- Run `npm install ` to install the project dependencies   
+4. - Run gulp production to minify things.
+5. Add gulp zip to zip all for production (exclude files)
