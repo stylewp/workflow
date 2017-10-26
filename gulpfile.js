@@ -88,6 +88,20 @@ gulp.task('compresscss', function(){
           .pipe(gulp.dest(APPPATH.css));
 });
 
+
+gulp.task('sass', function(){
+  var bootstrapCSS = gulp.src('./node_modules/bootstrap/dist/css/bootstrap.css');
+  var sassFiles;
+  
+  
+  sassFiles = gulp.src(SOURCEPATHS.sassSource)
+      .pipe(autoprefixer())
+      .pipe(sass({outputStyle: 'expanded'}).on('error', sass.logError))
+      return merge(bootstrapCSS, sassFiles)
+          .pipe(concat('app.css'))
+          .pipe(gulp.dest(APPPATH.css));
+});
+
 gulp.task('minifyHtml', function() {
    return gulp.src(SOURCEPATHS.htmlSource)
         .pipe(injectPartials())
